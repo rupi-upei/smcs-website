@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
+/* =====================================================
+   SMCSS DESIGN TOKENS — change colours here only.
+   Brand colours sampled from the official SMCSS logo.
+   ===================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base */
+  --paper: #fafaf7;
+  --surface: #ffffff;
+  --ink: #111318;
+  --muted: #5b6070;
+  --line: #e3e4e0;
+  --grid: rgb(17 19 24 / 0.05);
+
+  /* Text-safe accents (pass WCAG AA on light background) */
+  --accent: #0e7c86;   /* deep cyan: links, buttons */
+  --accent-ink: #ffffff; /* text on accent buttons */
+  --accent-2: #b8501a; /* deep orange: secondary highlights */
+
+  /* Exact brand colours — DECORATION ONLY in light mode */
+  --brand-orange: #ff914d;
+  --brand-cyan: #5ce1e6;
+  --brand-yellow: #f8d16f;
 }
 
+/* Dark mode: follows system setting unless user picks light */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0b0c0f;
+    --surface: #15171c;
+    --ink: #ecedea;
+    --muted: #9aa0ad;
+    --line: #262a33;
+    --grid: rgb(236 237 234 / 0.05);
+    --accent: #5ce1e6;
+    --accent-ink: #0b0c0f;
+    --accent-2: #ff914d;
+  }
+}
+/* Manual dark mode (for the toggle we'll add later) */
+:root[data-theme="dark"] {
+  --paper: #0b0c0f;
+  --surface: #15171c;
+  --ink: #ecedea;
+  --muted: #9aa0ad;
+  --line: #262a33;
+  --grid: rgb(236 237 234 / 0.05);
+  --accent: #5ce1e6;
+  --accent-ink: #0b0c0f;
+  --accent-2: #ff914d;
+}
+
+/* Lets us write classes like bg-paper, text-accent, text-brand-orange */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-2: var(--accent-2);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-yellow: var(--brand-yellow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Visible focus ring for keyboard users */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: var(--brand-yellow);
+    color: #111318;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Graph-paper texture — use as className="bg-grid" */
+@utility bg-grid {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Respect users who turn off animations in their OS */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
