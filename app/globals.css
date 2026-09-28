@@ -107,3 +107,28 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ===== Hero event plot animations ===== */
+.plot-reveal {
+  animation: plot-reveal 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes plot-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+.plot-fade {
+  animation: plot-fade 0.5s ease-out 1.1s both;
+}
+@keyframes plot-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.plot-pulse {
+  animation: plot-pulse 2.4s ease-in-out infinite;
+}
+@keyframes plot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
+  50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 0%, transparent); }
+}
