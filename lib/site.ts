@@ -13,8 +13,8 @@ export const navLinks = [
 export const siteInfo = {
   name: "SMCSS",
   fullName: "School of Mathematics and Computational Science Society",
-  // PLACEHOLDER: replace with real SMCSS details
-  email: "smcss@example.com",
-  instagram: "https://instagram.com/",
-  location: "PLACEHOLDER — room / building, UPEI",
+  email: "smcss@upeisu.ca",
+  instagram: "https://www.instagram.com/upeismcss",
+  instagramHandle: "@upeismcss",
+  linktree: "https://linktr.ee/upeismcss", // all current events live here
 };

@@ -17,7 +17,6 @@ export default function Footer() {
             height={96}
             className="rounded-full"
           />
-
           {/* PLACEHOLDER: confirm wording with the society */}
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#9aa0ad]">
             {siteInfo.fullName} — the student society for mathematics,
@@ -29,7 +28,6 @@ export default function Footer() {
           <h2 className="font-mono text-xs uppercase tracking-widest text-[#9aa0ad]">
             {"{ pages }"}
           </h2>
-
           <ul className="mt-4 space-y-1">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -48,7 +46,6 @@ export default function Footer() {
           <h2 className="font-mono text-xs uppercase tracking-widest text-[#9aa0ad]">
             {"{ contact }"}
           </h2>
-
           <ul className="mt-4 space-y-1 text-sm">
             <li>
               <a
@@ -58,7 +55,6 @@ export default function Footer() {
                 {siteInfo.email}
               </a>
             </li>
-
             <li>
               <a
                 href={siteInfo.instagram}
@@ -66,25 +62,26 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-block py-1 transition-colors hover:text-brand-cyan"
               >
-                Instagram
+                Instagram {siteInfo.instagramHandle}
               </a>
             </li>
-
-            <li className="py-1 text-[#9aa0ad]">
-              {siteInfo.location}
+            <li>
+              <a
+                href={siteInfo.linktree}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block py-1 transition-colors hover:text-brand-cyan"
+              >
+                Events &amp; links (Linktree)
+              </a>
             </li>
           </ul>
         </div>
       </Container>
 
       <Container className="flex flex-col gap-2 border-t border-white/10 py-6 text-xs text-[#9aa0ad] sm:flex-row sm:justify-between">
-        <p>
-          © {year} {siteInfo.name}
-        </p>
-
-        <p>
-          University of Prince Edward Island · Charlottetown, PEI
-        </p>
+        <p>© {year} {siteInfo.name}</p>
+        <p>University of Prince Edward Island · Charlottetown, PEI</p>
       </Container>
     </footer>
   );

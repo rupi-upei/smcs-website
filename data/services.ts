@@ -1,32 +1,24 @@
 // ============================================================
-// SERVICES — canteen and locker details.
-// Everything below is SAMPLE data (placeholder: true).
-// Replace with official SMCSS info and set placeholder: false.
+// SERVICES — locker rental details (official, from SMCSS).
+// Edit here if prices, location, or rules change.
 // ============================================================
 
-export type OpeningHours = {
-  day: number; // 0 = Sunday, 1 = Monday, ... 6 = Saturday
-  open: string; // 24-hour time, e.g. "09:00"
-  close: string; // e.g. "15:00"
-};
-
-export const canteen = {
-  placeholder: true,
-  summary: "Snacks and drinks between classes, run by the society.",
-  location: "Location TBA",
-  hoursSummary: "Mon–Fri, 9:00 a.m. – 3:00 p.m.", // keep in sync with `hours` below
-  hours: [
-    { day: 1, open: "09:00", close: "15:00" },
-    { day: 2, open: "09:00", close: "15:00" },
-    { day: 3, open: "09:00", close: "15:00" },
-    { day: 4, open: "09:00", close: "15:00" },
-    { day: 5, open: "09:00", close: "15:00" },
-  ] as OpeningHours[],
-};
-
 export const lockers = {
-  placeholder: true,
-  summary: "Rent a locker near your classes so you're not carrying everything all day.",
-  price: "Price TBA",
-  period: "Rental period TBA",
+  summary:
+    "SMCSS rents lockers on the bottom floor of Cass Science Hall, right in the centre of campus.",
+  price: "$10 per semester",
+  deposit: "$10, refunded at the end of the semester if the rules are followed",
+  period: "One semester",
+  location: "Cass Science Hall, bottom floor",
+  eligibility: null as string | null, // not specified yet by SMCSS
+  rules: [
+    "Don't leave food in your locker for long periods. It can cause mold, bad smells, and bugs.",
+    "Clean out your locker and remove your lock by the last day of classes, or the deposit isn't refunded.",
+  ],
+  // Big numbers shown on the home page
+  stats: [
+    { label: "Price", value: "$10", note: "per semester" },
+    { label: "Deposit", value: "$10", note: "refunded if rules are followed" },
+    { label: "Where", value: "Cass", note: "Science Hall, bottom floor" },
+  ],
 };
