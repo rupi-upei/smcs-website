@@ -32,3 +32,13 @@ export type Resource = {
   category: ResourceCategory;
   featured?: boolean; // true = also shown on the home page
 };
+
+export type Executive = {
+  role: string;
+  name?: string; // leave out until confirmed
+  program?: string; // e.g. "BSc Computer Science, 3rd year"
+  bio?: string;
+  photo?: string; // e.g. "/executives/jane.jpg" (file goes in public/executives/)
+  email?: string;
+  linkedin?: string;
+};
