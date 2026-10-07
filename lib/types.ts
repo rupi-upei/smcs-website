@@ -19,6 +19,7 @@ export type SmcssEvent = {
 };
 
 export type ResourceCategory =
+  | "Help & Support"
   | "UPEI"
   | "Math"
   | "Computer Science"

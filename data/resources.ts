@@ -1,11 +1,39 @@
-import type { Resource } from "@/lib/types";
+import type { Resource, ResourceCategory } from "@/lib/types";
 
 // ============================================================
 // RESOURCES — add, edit, or remove links here.
-// featured: true = also shown on the home page (keep it to ~6).
-// Starter list taken from the current upeismcss.ca Resources page.
+// featured: true = also shown on the home page (first 6 are used).
+// Starter list from the current upeismcss.ca Resources page,
+// plus UPEI support and opportunity links.
 // ============================================================
+
+// Order of the filter buttons on the Resources page
+export const resourceCategories: ResourceCategory[] = [
+  "Help & Support",
+  "UPEI",
+  "Math",
+  "Computer Science",
+  "Writing & Research",
+  "Opportunities",
+];
+
 export const resources: Resource[] = [
+  // Help & Support
+  {
+    title: "SMCS Help Centres",
+    description:
+      "Free drop-in help for first- and second-year math and computer science courses. Cass Science Hall, Room 105.",
+    url: "https://www.smcs.upei.ca/help",
+    category: "Help & Support",
+    featured: true,
+  },
+  {
+    title: "Writing Centre",
+    description: "Book free appointments for help with writing assignments.",
+    url: "https://upei.mywconline.com/",
+    category: "Help & Support",
+  },
+
   // UPEI
   {
     title: "School of Mathematical and Computational Sciences",
@@ -47,7 +75,6 @@ export const resources: Resource[] = [
     description: "Computational engine for math, stats, and more.",
     url: "https://www.wolframalpha.com/",
     category: "Math",
-    featured: true,
   },
   {
     title: "Symbolab",
@@ -102,5 +129,19 @@ export const resources: Resource[] = [
     description: "Reference manager for academic papers.",
     url: "https://www.mendeley.com/",
     category: "Writing & Research",
+  },
+
+  // Opportunities
+  {
+    title: "UPEI Career Services",
+    description: "Career advising and support for UPEI students.",
+    url: "https://www.upei.ca/careerservices",
+    category: "Opportunities",
+  },
+  {
+    title: "Experiential Learning",
+    description: "Hands-on learning opportunities for UPEI students.",
+    url: "https://www.upei.ca/exed",
+    category: "Opportunities",
   },
 ];
