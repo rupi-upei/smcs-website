@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import BrandMark from "./BrandMark";
+import ThemeToggle from "./ThemeToggle";
 import { navLinks } from "@/lib/site";
 
 export default function Navbar() {
@@ -64,6 +65,7 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           {/* PLACEHOLDER: point this to the real "get involved" page later */}
           <Link
             href="/contact"

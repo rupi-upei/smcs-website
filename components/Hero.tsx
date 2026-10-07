@@ -18,7 +18,6 @@ export default function Hero() {
           <span className="text-accent">{" }"}</span>
         </p>
 
-        {/* PLACEHOLDER COPY: replace with official SMCSS messaging if available */}
         <h1
           id="hero-title"
           className="mt-5 max-w-3xl text-5xl font-semibold tracking-tight text-balance sm:text-7xl"
@@ -26,8 +25,8 @@ export default function Hero() {
           Plot your year<span className="text-accent">.</span>
         </h1>
         <p className="mt-6 max-w-xl text-lg text-muted">
-          Events, services, and resources for students in mathematics, computing,
-          statistics, and data science — all in one place.
+          Where math meets code and friendships compute. SMCSS is the student
+          society for UPEI&apos;s School of Mathematical and Computational Sciences.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -35,18 +34,31 @@ export default function Hero() {
             href="/events"
             className="inline-flex min-h-12 items-center rounded-full bg-accent px-6 font-medium text-accent-ink transition hover:opacity-90"
           >
-            See all events
+            See events
           </Link>
           <Link
-            href="/services"
+            href="/about"
             className="inline-flex min-h-12 items-center rounded-full border border-line bg-surface px-6 font-medium transition-colors hover:bg-ink/5"
           >
-            Student services
+            About SMCSS
           </Link>
         </div>
 
         <div className="mt-16">
           <EventPlot plot={plot} />
+          <p className="mt-4 text-sm text-muted">
+            Looking for everything that&apos;s on?{" "}
+            <a
+              href={siteInfo.linktree}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-accent underline-offset-4 hover:underline"
+            >
+              See all current events on Linktree
+              <span aria-hidden="true"> ↗</span>
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </p>
         </div>
       </Container>
     </section>

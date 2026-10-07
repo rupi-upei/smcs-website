@@ -39,3 +39,12 @@ export function formatTime(iso: string) {
 export function formatMonth(date: Date) {
   return new Intl.DateTimeFormat("en-CA", { month: "short", timeZone: TZ }).format(date);
 }
+
+// Month + day for the date block on event cards, e.g. { month: "Oct", day: "07" }
+export function formatDayParts(iso: string) {
+  const d = new Date(iso);
+  return {
+    month: new Intl.DateTimeFormat("en-CA", { month: "short", timeZone: TZ }).format(d),
+    day: new Intl.DateTimeFormat("en-CA", { day: "2-digit", timeZone: TZ }).format(d),
+  };
+}

@@ -1,23 +1,23 @@
 import Container from "../Container";
 import SectionHeading from "../SectionHeading";
 
-// PLACEHOLDER COPY: confirm with the society
+// Based on SMCSS's official objectives (current upeismcss.ca About page)
 const pillars = [
   {
-    title: "Academic support",
-    text: "Study nights, peer help, and resources for math, CS, stats, and data courses.",
+    title: "Mutual support",
+    text: "A place for students in the School to get to know each other and support one another.",
   },
   {
-    title: "Events & community",
-    text: "Socials, workshops, and competitions that connect students across the School.",
+    title: "Learning",
+    text: "Workshops and projects that build your skills beyond the classroom.",
   },
   {
-    title: "Student services",
-    text: "A canteen and locker rentals, run by students for students.",
+    title: "Outreach",
+    text: "Activities that make math and computer science better known across UPEI and to high school students.",
   },
   {
-    title: "Career growth",
-    text: "Panels and connections to help you plan what comes after your degree.",
+    title: "Faculty connections",
+    text: "Friendly, respectful ties with faculty and staff in the School and related departments.",
   },
 ];
 
@@ -27,9 +27,9 @@ export default function WhatWeDo() {
       <Container>
         <SectionHeading
           id="what-we-do"
-          label="what we do"
-          title="A home base for everyone in the School."
-          description="Whether it's your first term or your last, SMCSS is here to make student life easier and more connected."
+          label="who we are"
+          title="Math, code, and the people who love both."
+          description="SMCSS is a student club ratified under the UPEI Student Union. We bring together students in UPEI's School of Mathematical and Computational Sciences through support, learning, and plenty of fun."
         />
         <ol className="mt-12 grid border-t border-line sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((p, i) => (

@@ -17,3 +17,18 @@ export type SmcssEvent = {
   link?: string; // registration or more info
   placeholder?: boolean; // true = sample event, not real SMCSS info
 };
+
+export type ResourceCategory =
+  | "UPEI"
+  | "Math"
+  | "Computer Science"
+  | "Writing & Research"
+  | "Opportunities";
+
+export type Resource = {
+  title: string;
+  description: string;
+  url: string;
+  category: ResourceCategory;
+  featured?: boolean; // true = also shown on the home page
+};
