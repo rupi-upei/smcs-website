@@ -96,7 +96,7 @@ Judging categories this was built against: UI/Visual Design, UX/Usability, Funct
 
 ## Screenshots
 
-> Add screenshots to `docs/screenshots/` and they'll appear here.
+
 
 | Home | Events |
 |---|---|
