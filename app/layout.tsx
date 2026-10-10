@@ -2,15 +2,22 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteInfo } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "SMCSS", template: "%s · SMCSS" },
+  metadataBase: new URL(siteInfo.url),
+  title: {
+    default: "SMCSS · School of Mathematical and Computational Sciences Society",
+    template: "%s · SMCSS",
+  },
   description:
-    "The School of Mathematical and Computational Sciences Society at UPEI — events, services, and resources for students.",
+    "The student society for UPEI's School of Mathematical and Computational Sciences: events, locker rental, resources, and more.",
+  openGraph: { type: "website", siteName: "SMCSS", locale: "en_CA", url: "/" },
+  twitter: { card: "summary_large_image" },
 };
 
 // Runs before the page paints: applies saved theme (or system theme) with no flash

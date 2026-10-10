@@ -12,6 +12,8 @@ export const navLinks = [
 
 export const siteInfo = {
   name: "SMCSS",
+    // Live address. At handoff, set NEXT_PUBLIC_SITE_URL in Vercel to https://upeismcss.ca
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://smcs-website-one.vercel.app",
   fullName: "School of Mathematical and Computational Sciences Society",
   tagline: "Where Math Meets Code and Friendships Compute!",
   location: "Cass Science Hall Lounge (Room 202), UPEI",

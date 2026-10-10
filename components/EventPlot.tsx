@@ -14,9 +14,10 @@ export default function EventPlot({ plot }: { plot: PlotData }) {
   return (
     <div>
       {/* The plot */}
-      <div className="relative w-full" style={{ aspectRatio: `${W} / ${H}` }}>
+      <div className="relative aspect-[4/3] w-full sm:aspect-[8/3]">
         <svg
           viewBox={`0 0 ${W} ${H}`}
+          preserveAspectRatio="none"
           className="plot-reveal absolute inset-0 h-full w-full overflow-visible"
           aria-hidden="true"
         >
