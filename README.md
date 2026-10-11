@@ -106,7 +106,7 @@ Judging categories this was built against: UI/Visual Design, UX/Usability, Funct
 |---|---|
 | ![Mobile menu](docs/screenshots/mobile-menu.png) | ![Dark mode](docs/screenshots/dark-mode.png) |
 
-**Lighthouse (PageSpeed Insights):** 100 Performance · 100 Accessibility · 100 Best Practices · 100 SEO, on both mobile and desktop.
+**Lighthouse (PageSpeed Insights):** 100 Performance · 100 Accessibility · 100 Best Practices · 100 SEO on the home page, on both mobile and desktop.
 
 ## Tech stack
 
